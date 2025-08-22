@@ -20,6 +20,12 @@ public class Sanbot {
             if (input.equals("bye")) {
                 System.out.println(bye);
                 break;
+            } else if (input.equals("list")){
+                int index = 1;
+                for (String i : list) {
+                    System.out.println(index + ". " + i);
+                    index++;
+                }
             } else {
                 list.add(input);
                 System.out.println("added: " + input);
