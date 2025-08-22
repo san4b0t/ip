@@ -22,13 +22,18 @@ public class Sanbot {
 
     private static boolean handleInput(String input) {
         String bye = "Bye. Hope to see you again soon!";
+        String[] processed = input.split(" ");
 
-        switch (input) {
+        switch (processed[0]) {
             case "bye":
                 System.out.println(bye);
                 return true;
             case "list":
                 printListItems();
+                break;
+            case "mark":
+                markDone(Integer.parseInt(processed[1].trim()) - 1);
+                System.out.println("Nice! I have marked this task as done:\n" + list.get(Integer.parseInt(processed[1].trim()) - 1));
                 break;
             default:
                 list.add(new Task(input));
@@ -44,5 +49,9 @@ public class Sanbot {
             System.out.println(index + ": " + item);
             index++;
         }
+    }
+
+    private static void markDone(int num) {
+        list.get(num).markAsDone();
     }
 }
