@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Sanbot {
     public static void main(String[] args) {
@@ -11,6 +12,7 @@ public class Sanbot {
         System.out.println(greeting);
 
         String input;
+        ArrayList<String> list = new ArrayList<>();
 
         while (true) {
             input = scanner.nextLine();
@@ -19,7 +21,8 @@ public class Sanbot {
                 System.out.println(bye);
                 break;
             } else {
-                System.out.println(input);
+                list.add(input);
+                System.out.println("added: " + input);
             }
         }
 
