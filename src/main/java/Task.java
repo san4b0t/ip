@@ -13,6 +13,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return this.name;
+        String check = isDone ? "[X] " : "[ ] ";
+        return check + this.name;
     }
 }
