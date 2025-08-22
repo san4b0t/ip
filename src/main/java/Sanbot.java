@@ -7,7 +7,7 @@ public class Sanbot {
 
     public static void main(String[] args) {
 
-        String greeting ="Hello! I'm Sanbot\nWhat can I do for you?\n";
+        String greeting = "Hello! I'm Sanbot\nWhat can I do for you?\n";
         System.out.println(greeting);
 
         Scanner scanner = new Scanner(System.in);
@@ -33,7 +33,9 @@ public class Sanbot {
                 break;
             case "mark":
                 markDone(Integer.parseInt(processed[1].trim()) - 1);
-                System.out.println("Nice! I have marked this task as done:\n" + list.get(Integer.parseInt(processed[1].trim()) - 1));
+                break;
+            case "unmark":
+                markNotDone(Integer.parseInt(processed[1].trim()) - 1);
                 break;
             default:
                 list.add(new Task(input));
@@ -53,5 +55,11 @@ public class Sanbot {
 
     private static void markDone(int num) {
         list.get(num).markAsDone();
+        System.out.println("Nice! I have marked this task as done:\n" + list.get(num));
+    }
+
+    private static void markNotDone(int num) {
+        list.get(num).markAsNotDone();
+        System.out.println("OK, I've marked this task as not done yet:\n" + list.get(num));
     }
 }
