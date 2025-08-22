@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Sanbot {
 
-    private static ArrayList<String> list = new ArrayList<>();
+    private static ArrayList<Task> list = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -29,7 +29,7 @@ public class Sanbot {
         } else if (input.equals("list")){
             printListItems();
         } else {
-            list.add(input);
+            list.add(new Task(input));
             System.out.println("added: " + input);
         }
         return false;
@@ -37,7 +37,7 @@ public class Sanbot {
 
     private static void printListItems() {
         int index = 1;
-        for (String item : list) {
+        for (Task item : list) {
             System.out.println(index + ": " + item);
             index++;
         }
