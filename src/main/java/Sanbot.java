@@ -48,6 +48,13 @@ public class Sanbot {
                 list.add(dt);
                 System.out.println("Got it. I have added this task:\n" + dt);
                 break;
+            case "event":
+                String[] details2 = input.split("/from");
+                String[] details3 = details2[1].split("/to");
+                Task et = new EventTask(details2[0].substring(6), details3[0].substring(1), details3[1].substring(1));
+                list.add(et);
+                System.out.println("Got it. I have added this task:\n" + et);
+                break;
             default:
                 System.out.println("Oops, I am not sure what is the task type!");
         }
