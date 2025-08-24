@@ -38,22 +38,13 @@ public class Sanbot {
                 markNotDone(Integer.parseInt(processed[1].trim()) - 1);
                 break;
             case "todo":
-                Task t = new TodoTask(input.substring(5));
-                list.add(t);
-                System.out.println("Got it. I have added this task:\n" + t);
+                todoHandler(input);
                 break;
             case "deadline":
-                String[] details = input.split("/by");
-                Task dt = new DeadlineTask(details[0].substring(9), details[1].substring(1));
-                list.add(dt);
-                System.out.println("Got it. I have added this task:\n" + dt);
+                deadlineHandler(input);
                 break;
             case "event":
-                String[] details2 = input.split("/from");
-                String[] details3 = details2[1].split("/to");
-                Task et = new EventTask(details2[0].substring(6), details3[0].substring(1), details3[1].substring(1));
-                list.add(et);
-                System.out.println("Got it. I have added this task:\n" + et);
+                eventHandler(input);
                 break;
             default:
                 System.out.println("Oops, I am not sure what is the task type!");
@@ -77,5 +68,26 @@ public class Sanbot {
     private static void markNotDone(int num) {
         list.get(num).markAsNotDone();
         System.out.println("OK, I've marked this task as not done yet:\n" + list.get(num));
+    }
+
+    private static void todoHandler(String input) {
+        Task t = new TodoTask(input.substring(5));
+        list.add(t);
+        System.out.println("Got it. I have added this task:\n" + t);
+    }
+
+    private static void deadlineHandler(String input) {
+        String[] details = input.split("/by");
+        Task dt = new DeadlineTask(details[0].substring(9), details[1].substring(1));
+        list.add(dt);
+        System.out.println("Got it. I have added this task:\n" + dt);
+    }
+
+    private static void eventHandler(String input) {
+        String[] details2 = input.split("/from");
+        String[] details3 = details2[1].split("/to");
+        Task et = new EventTask(details2[0].substring(6), details3[0].substring(1), details3[1].substring(1));
+        list.add(et);
+        System.out.println("Got it. I have added this task:\n" + et);
     }
 }
