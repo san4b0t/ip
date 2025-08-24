@@ -37,10 +37,19 @@ public class Sanbot {
             case "unmark":
                 markNotDone(Integer.parseInt(processed[1].trim()) - 1);
                 break;
-            default:
-                list.add(new Task(input));
-                System.out.println("added: " + input);
+            case "todo":
+                Task t = new Task(input.substring(5));
+                list.add(t);
+                System.out.println("Got it. I have added this task:\n" + t);
                 break;
+            case "deadline":
+                String[] details = input.split("/by");
+                Task dt = new DeadlineTask(details[0].substring(9), details[1].substring(1));
+                list.add(dt);
+                System.out.println("Got it. I have added this task:\n" + dt);
+                break;
+            default:
+                System.out.println("Oops, I am not sure what is the task type!");
         }
         return false;
     }
