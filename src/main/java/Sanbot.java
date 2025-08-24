@@ -38,7 +38,7 @@ public class Sanbot {
                 markNotDone(Integer.parseInt(processed[1].trim()) - 1);
                 break;
             case "todo":
-                Task t = new Task(input.substring(5));
+                Task t = new TodoTask(input.substring(5));
                 list.add(t);
                 System.out.println("Got it. I have added this task:\n" + t);
                 break;
