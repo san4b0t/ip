@@ -10,4 +10,19 @@ Got it. I have added this task:
 1: [D] [ ] finish 2103t ip (by: today)
 2: [E] [ ] 2101 pair presentation meeting (from: today 1pm  to: 4pm)
 3: [D] [ ] finish tut submission (by: tonight)
+Nice! I have marked this task as done:
+[D] [X] finish tut submission (by: tonight)
+1: [D] [ ] finish 2103t ip (by: today)
+2: [E] [ ] 2101 pair presentation meeting (from: today 1pm  to: 4pm)
+3: [D] [X] finish tut submission (by: tonight)
+Nice! I have marked this task as done:
+[D] [X] finish 2103t ip (by: today)
+1: [D] [X] finish 2103t ip (by: today)
+2: [E] [ ] 2101 pair presentation meeting (from: today 1pm  to: 4pm)
+3: [D] [X] finish tut submission (by: tonight)
+OK, I've marked this task as not done yet:
+[D] [ ] finish 2103t ip (by: today)
+1: [D] [ ] finish 2103t ip (by: today)
+2: [E] [ ] 2101 pair presentation meeting (from: today 1pm  to: 4pm)
+3: [D] [X] finish tut submission (by: tonight)
 Bye. Hope to see you again soon!
