@@ -42,4 +42,8 @@ or maybe forgot to add a space before the number?
 Oops! It seems like you are trying to mark your task as not done
 but you missed out the task number
 or maybe forgot to add a space before the number?
+Oops! It seems like you are trying to mark your task done
+but you have entered an invalid task index
+Oops! It seems like you are trying to mark your task as not done
+but you have entered an invalid task index
 Bye. Hope to see you again soon!

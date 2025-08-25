@@ -12,4 +12,6 @@ event from 12 to 1
 deadline finish ip by tomorrow
 mark
 unmark
+mark 4
+unmark 5
 bye
