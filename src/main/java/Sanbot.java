@@ -32,10 +32,10 @@ public class Sanbot {
                 printListItems();
                 break;
             case "mark":
-                markDone(Integer.parseInt(processed[1].trim()) - 1);
+                markDone(processed);
                 break;
             case "unmark":
-                markNotDone(Integer.parseInt(processed[1].trim()) - 1);
+                markNotDone(processed);
                 break;
             case "todo":
                 todoHandler(input);
@@ -60,14 +60,26 @@ public class Sanbot {
         }
     }
 
-    private static void markDone(int num) {
-        list.get(num).markAsDone();
-        System.out.println("Nice! I have marked this task as done:\n" + list.get(num));
+    private static void markDone(String[] processed) {
+        try {
+            int num = Integer.parseInt(processed[1].trim()) - 1;
+            list.get(num).markAsDone();
+            System.out.println("Nice! I have marked this task as done:\n" + list.get(num));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Oops! It seems like you are trying to mark your task done\n" +
+                    "but you missed out the task number\nor maybe forgot to add a space before the number?");
+        }
     }
 
-    private static void markNotDone(int num) {
-        list.get(num).markAsNotDone();
-        System.out.println("OK, I've marked this task as not done yet:\n" + list.get(num));
+    private static void markNotDone(String[] processed) {
+        try {
+            int num = Integer.parseInt(processed[1].trim()) - 1;
+            list.get(num).markAsNotDone();
+            System.out.println("OK, I've marked this task as not done yet:\n" + list.get(num));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Oops! It seems like you are trying to mark your task as not done\n" +
+                    "but you missed out the task number\nor maybe forgot to add a space before the number?");
+        }
     }
 
     private static void todoHandler(String input) {
