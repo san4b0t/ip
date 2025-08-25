@@ -98,16 +98,24 @@ public class Sanbot {
             System.out.println("I see you are trying to add a task with a deadline.\n"
                 + "it seems you did not use the '/by' flag properly\n"
                 + "input in the following format:\n"
-                + "deadline <taskname> /by <deadline>");
+                + "deadline <task> /by <deadline>");
         }
 
     }
 
     private static void eventHandler(String input) {
-        String[] details2 = input.split("/from");
-        String[] details3 = details2[1].split("/to");
-        Task et = new EventTask(details2[0].substring(6), details3[0].substring(1), details3[1].substring(1));
-        list.add(et);
-        System.out.println("Got it. I have added this task:\n" + et);
+        try {
+            String[] details2 = input.split("/from");
+            String[] details3 = details2[1].split("/to");
+            Task et = new EventTask(details2[0].substring(6), details3[0].substring(1), details3[1].substring(1));
+            list.add(et);
+            System.out.println("Got it. I have added this task:\n" + et);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("I see you are trying to add an event.\n"
+                + "it seems you did not use the '/from' and '/to' flags properly\n"
+                + "input in the following format:\n"
+                + "event <task> /from <start> /to <end>");
+        }
+
     }
 }
