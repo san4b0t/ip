@@ -1,7 +1,13 @@
-Hello from
- ____        _        
-|  _ \ _   _| | _____ 
-| | | | | | | |/ / _ \
-| |_| | |_| |   <  __/
-|____/ \__,_|_|\_\___|
+Hello! I'm Sanbot
+What can I do for you?
 
+Got it. I have added this task:
+[D] [ ] finish 2103t ip (by: today)
+Got it. I have added this task:
+[E] [ ] 2101 pair presentation meeting (from: today 1pm  to: 4pm)
+Got it. I have added this task:
+[D] [ ] finish tut submission (by: tonight)
+1: [D] [ ] finish 2103t ip (by: today)
+2: [E] [ ] 2101 pair presentation meeting (from: today 1pm  to: 4pm)
+3: [D] [ ] finish tut submission (by: tonight)
+Bye. Hope to see you again soon!
