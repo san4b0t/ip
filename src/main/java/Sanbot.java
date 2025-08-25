@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Sanbot {
 
     private static ArrayList<Task> list = new ArrayList<>();
+    private static int count = 0;
 
     public static void main(String[] args) {
 
@@ -85,7 +86,9 @@ public class Sanbot {
     private static void todoHandler(String input) {
         Task t = new TodoTask(input.substring(5));
         list.add(t);
+        count++;
         System.out.println("Got it. I have added this task:\n" + t);
+        System.out.printf("Now you have %d task(s) in the list%n", count);
     }
 
     private static void deadlineHandler(String input) {
@@ -93,7 +96,9 @@ public class Sanbot {
             String[] details = input.split("/by");
             Task dt = new DeadlineTask(details[0].substring(9), details[1].substring(1));
             list.add(dt);
+            count++;
             System.out.println("Got it. I have added this task:\n" + dt);
+            System.out.printf("Now you have %d task(s) in the list%n", count);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("I see you are trying to add a task with a deadline.\n"
                 + "it seems you did not use the '/by' flag properly\n"
@@ -109,7 +114,9 @@ public class Sanbot {
             String[] details3 = details2[1].split("/to");
             Task et = new EventTask(details2[0].substring(6), details3[0].substring(1), details3[1].substring(1));
             list.add(et);
+            count++;
             System.out.println("Got it. I have added this task:\n" + et);
+            System.out.printf("Now you have %d task(s) in the list%n", count);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("I see you are trying to add an event.\n"
                 + "it seems you did not use the '/from' and '/to' flags properly\n"
