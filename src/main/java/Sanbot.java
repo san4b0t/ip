@@ -69,6 +69,9 @@ public class Sanbot {
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Oops! It seems like you are trying to mark your task done\n" +
                     "but you missed out the task number\nor maybe forgot to add a space before the number?");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Oops! It seems like you are trying to mark your task done\n" +
+                    "but you have entered an invalid task index");
         }
     }
 
@@ -80,6 +83,9 @@ public class Sanbot {
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Oops! It seems like you are trying to mark your task as not done\n"
                 + "but you missed out the task number\nor maybe forgot to add a space before the number?");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Oops! It seems like you are trying to mark your task as not done\n" +
+                    "but you have entered an invalid task index");
         }
     }
 
