@@ -3,10 +3,13 @@ What can I do for you?
 
 Got it. I have added this task:
 [D] [ ] finish 2103t ip (by: today)
+Now you have 1 task(s) in the list
 Got it. I have added this task:
 [E] [ ] 2101 pair presentation meeting (from: today 1pm  to: 4pm)
+Now you have 2 task(s) in the list
 Got it. I have added this task:
 [D] [ ] finish tut submission (by: tonight)
+Now you have 3 task(s) in the list
 1: [D] [ ] finish 2103t ip (by: today)
 2: [E] [ ] 2101 pair presentation meeting (from: today 1pm  to: 4pm)
 3: [D] [ ] finish tut submission (by: tonight)
