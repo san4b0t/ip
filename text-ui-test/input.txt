@@ -8,4 +8,8 @@ mark 1
 list
 unmark 1
 list
+event from 12 to 1
+deadline finish ip by tomorrow
+mark
+unmark
 bye

@@ -25,4 +25,18 @@ OK, I've marked this task as not done yet:
 1: [D] [ ] finish 2103t ip (by: today)
 2: [E] [ ] 2101 pair presentation meeting (from: today 1pm  to: 4pm)
 3: [D] [X] finish tut submission (by: tonight)
+I see you are trying to add an event.
+it seems you did not use the '/from' and '/to' flags properly
+input in the following format:
+event <task> /from <start> /to <end>
+I see you are trying to add a task with a deadline.
+it seems you did not use the '/by' flag properly
+input in the following format:
+deadline <task> /by <deadline>
+Oops! It seems like you are trying to mark your task done
+but you missed out the task number
+or maybe forgot to add a space before the number?
+Oops! It seems like you are trying to mark your task as not done
+but you missed out the task number
+or maybe forgot to add a space before the number?
 Bye. Hope to see you again soon!
