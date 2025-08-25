@@ -77,8 +77,8 @@ public class Sanbot {
             list.get(num).markAsNotDone();
             System.out.println("OK, I've marked this task as not done yet:\n" + list.get(num));
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Oops! It seems like you are trying to mark your task as not done\n" +
-                    "but you missed out the task number\nor maybe forgot to add a space before the number?");
+            System.out.println("Oops! It seems like you are trying to mark your task as not done\n"
+                + "but you missed out the task number\nor maybe forgot to add a space before the number?");
         }
     }
 
@@ -89,10 +89,18 @@ public class Sanbot {
     }
 
     private static void deadlineHandler(String input) {
-        String[] details = input.split("/by");
-        Task dt = new DeadlineTask(details[0].substring(9), details[1].substring(1));
-        list.add(dt);
-        System.out.println("Got it. I have added this task:\n" + dt);
+        try {
+            String[] details = input.split("/by");
+            Task dt = new DeadlineTask(details[0].substring(9), details[1].substring(1));
+            list.add(dt);
+            System.out.println("Got it. I have added this task:\n" + dt);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("I see you are trying to add a task with a deadline.\n"
+                + "it seems you did not use the '/by' flag properly\n"
+                + "input in the following format:\n"
+                + "deadline <taskname> /by <deadline>");
+        }
+
     }
 
     private static void eventHandler(String input) {
