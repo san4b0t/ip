@@ -38,6 +38,9 @@ public class Sanbot {
             case "unmark":
                 markNotDone(processed);
                 break;
+            case "delete":
+                delete(processed);
+                break;
             case "todo":
                 todoHandler(input);
                 break;
@@ -85,6 +88,23 @@ public class Sanbot {
                 + "but you missed out the task number\nor maybe forgot to add a space before the number?");
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Oops! It seems like you are trying to mark your task as not done\n" +
+                    "but you have entered an invalid task index");
+        }
+    }
+
+    private static void delete(String[] processed) {
+        try {
+            int num = Integer.parseInt(processed[1].trim()) - 1;
+            Task removed = list.get(num);
+            list.remove(num);
+            count--;
+            System.out.println("OK, I have removed this task from the list:\n" + removed);
+            System.out.printf("Now you have %d task(s) in the list%n", count);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Oops! It seems like you are trying to delete a task\n"
+                    + "but you missed out the task number\nor maybe forgot to add a space before the number?");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Oops! It seems like you are trying to delete a task\n" +
                     "but you have entered an invalid task index");
         }
     }
