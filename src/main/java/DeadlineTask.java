@@ -8,6 +8,11 @@ public class DeadlineTask extends Task {
 
     @Override
     public String toString() {
-        return "[D] " + super.toString() + String.format("(by: %s)", this.deadline);
+        return "[D] " + super.toString() + String.format(" (by: %s)", this.deadline);
+    }
+
+    @Override
+    public String saver() {
+        return String.format("D %s | %s", super.saver(), this.deadline);
     }
 }
