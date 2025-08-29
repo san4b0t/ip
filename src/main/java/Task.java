@@ -17,7 +17,12 @@ public class Task {
 
     @Override
     public String toString() {
-        String check = isDone ? "[X] " : "[ ] ";
+        String check = this.isDone ? "[X] " : "[ ] ";
         return check + this.name;
+    }
+
+    public String saver() {
+        int check = this.isDone ? 1 : 0;
+        return String.format("| %d | %s", check, this.name);
     }
 }

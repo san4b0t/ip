@@ -11,6 +11,9 @@ public class Sanbot {
         String greeting = "Hello! I'm Sanbot\nWhat can I do for you?\n";
         System.out.println(greeting);
 
+        list = TaskCache.loadTasks();
+        count = list.size();
+
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
