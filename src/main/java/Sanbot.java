@@ -19,6 +19,7 @@ public class Sanbot {
         }
 
         scanner.close();
+        TaskCache.saveTasks(list);
     }
 
     private static boolean handleInput(String input) {
