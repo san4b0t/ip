@@ -148,8 +148,8 @@ public class Sanbot {
             String[] details2 = input.split("/from");
             String[] details3 = details2[1].split("/to");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-            LocalDateTime from = LocalDateTime.parse(details3[0].substring(1), formatter);
-            LocalDateTime to = LocalDateTime.parse(details3[1].substring(1), formatter);
+            LocalDateTime from = LocalDateTime.parse(details3[0].substring(1).trim(), formatter);
+            LocalDateTime to = LocalDateTime.parse(details3[1].substring(1).trim(), formatter);
             Task et = new EventTask(details2[0].substring(6), from, to);
             list.add(et);
             count++;

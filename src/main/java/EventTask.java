@@ -12,11 +12,21 @@ public class EventTask extends Task{
 
     @Override
     public String toString() {
-        return "[E] " + super.toString() + String.format(" (from: %s to: %s)", this.start, this.end);
+        String startFormatted = String.format("%s, %s %d %d, %d:%02d", start.getDayOfWeek(),
+                start.getMonth(), start.getDayOfMonth(), start.getYear(),
+                start.getHour(), start.getMinute());
+        String endFormatted = String.format("%s, %s %d %d, %d:%02d", end.getDayOfWeek(),
+                end.getMonth(), end.getDayOfMonth(), end.getYear(),
+                end.getHour(), end.getMinute());
+        return "[E] " + super.toString() + String.format(" (from: %s to: %s)", startFormatted, endFormatted);
     }
 
     @Override
     public String saver() {
-        return String.format("E %s| %s | %s", super.saver(), this.start, this.end);
+        String startFormatted = String.format("%02d-%02d-%d %d:%02d", start.getDayOfMonth(),
+                start.getMonthValue(), start.getYear(), start.getHour(), start.getMinute());
+        String endFormatted = String.format("%02d-%02d-%d %d:%02d", end.getDayOfMonth(),
+                end.getMonthValue(), end.getYear(), end.getHour(), end.getMinute());
+        return String.format("E %s| %s | %s", super.saver(), startFormatted, endFormatted);
     }
 }
