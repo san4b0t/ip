@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class TaskCache {
+public class Storage {
 
     private static final String FILEPATH = "data/taskCache.txt";
 

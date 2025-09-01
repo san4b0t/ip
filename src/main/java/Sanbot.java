@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.time.LocalDateTime;
@@ -14,7 +13,7 @@ public class Sanbot {
         String greeting = "Hello! I'm Sanbot\nWhat can I do for you?\n";
         System.out.println(greeting);
 
-        list = TaskCache.loadTasks();
+        list = Storage.loadTasks();
         count = list.size();
 
         Scanner scanner = new Scanner(System.in);
@@ -25,7 +24,7 @@ public class Sanbot {
         }
 
         scanner.close();
-        TaskCache.saveTasks(list);
+        Storage.saveTasks(list);
     }
 
     private static boolean handleInput(String input) {

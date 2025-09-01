@@ -11,7 +11,7 @@ public class DeadlineTask extends Task {
 
     @Override
     public String toString() {
-        String deadlineFormatted = String.format("%s, %s %d %d, %d:%02d", deadline.getDayOfWeek(),
+        String deadlineFormatted = String.format("%s, %s %d %d, %02d:%02d", deadline.getDayOfWeek(),
                 deadline.getMonth(), deadline.getDayOfMonth(), deadline.getYear(),
                 deadline.getHour(), deadline.getMinute());
         return "[D] " + super.toString() + String.format(" (by: %s)", deadlineFormatted);
@@ -19,7 +19,7 @@ public class DeadlineTask extends Task {
 
     @Override
     public String saver() {
-        String deadlineFormatted = String.format("%02d-%02d-%d %d:%02d", deadline.getDayOfMonth(),
+        String deadlineFormatted = String.format("%02d-%02d-%d %02d:%02d", deadline.getDayOfMonth(),
                 deadline.getMonthValue(), deadline.getYear(), deadline.getHour(), deadline.getMinute());
         return String.format("D %s | %s", super.saver(), deadlineFormatted);
     }
