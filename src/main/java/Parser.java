@@ -8,25 +8,25 @@ public class Parser {
                 System.out.println(bye);
                 return true;
             case "list":
-                Sanbot.printListItems();
+                TaskList.printListItems();
                 break;
             case "mark":
-                Sanbot.markDone(processed);
+                TaskList.markDone(processed);
                 break;
             case "unmark":
-                Sanbot.markNotDone(processed);
+                TaskList.markNotDone(processed);
                 break;
             case "delete":
-                Sanbot.delete(processed);
+                TaskList.delete(processed);
                 break;
             case "todo":
-                Sanbot.todoHandler(input);
+                TaskList.todoHandler(input);
                 break;
             case "deadline":
-                Sanbot.deadlineHandler(input);
+                TaskList.deadlineHandler(input);
                 break;
             case "event":
-                Sanbot.eventHandler(input);
+                TaskList.eventHandler(input);
                 break;
             default:
                 System.out.println("Oops, I am not sure what is the task type!");
