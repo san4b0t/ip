@@ -11,11 +11,17 @@ public class DeadlineTask extends Task {
 
     @Override
     public String toString() {
-        return "[D] " + super.toString() + String.format(" (by: %s)", this.deadline);
+        String deadlineFormatted = String.format("%s, %s %d %d, %d:%02d", deadline.getDayOfWeek(),
+                deadline.getMonth(), deadline.getDayOfMonth(), deadline.getYear(),
+                deadline.getHour(), deadline.getMinute());
+        return "[D] " + super.toString() + String.format(" (by: %s)", deadlineFormatted);
     }
 
     @Override
     public String saver() {
-        return String.format("D %s | %s", super.saver(), this.deadline);
+        String deadlineFormatted = String.format("%s, %s %d %d, %d:%02d", deadline.getDayOfWeek(),
+                deadline.getMonth(), deadline.getDayOfMonth(), deadline.getYear(),
+                deadline.getHour(), deadline.getMinute());
+        return String.format("D %s | %s", super.saver(), deadlineFormatted);
     }
 }
