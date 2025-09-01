@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Sanbot {
 
@@ -124,7 +126,9 @@ public class Sanbot {
     private static void deadlineHandler(String input) {
         try {
             String[] details = input.split("/by");
-            Task dt = new DeadlineTask(details[0].substring(9), details[1].substring(1));
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+            LocalDateTime deadline = LocalDateTime.parse(details[1].substring(1), formatter);
+            Task dt = new DeadlineTask(details[0].substring(9), deadline);
             list.add(dt);
             count++;
             System.out.println("Got it. I have added this task:\n" + dt);

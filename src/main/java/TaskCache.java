@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class TaskCache {
 
@@ -47,7 +49,9 @@ public class TaskCache {
                     }
                     loaded.add(t);
                 } else if (type.equals("D")) {
-                    Task t = new DeadlineTask(processed[2].trim(), processed[3].trim());
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+                    LocalDateTime deadline = LocalDateTime.parse(processed[3].trim(), formatter);
+                    Task t = new DeadlineTask(processed[2].trim(), deadline);
                     if (processed[1].trim().equals("1")) {
                         t.markAsDone();
                     }
