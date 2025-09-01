@@ -20,49 +20,14 @@ public class Sanbot {
         boolean exit = false;
 
         while (!exit) {
-            exit = handleInput(scanner.nextLine());
+            exit = Parser.handleInput(scanner.nextLine());
         }
 
         scanner.close();
         Storage.saveTasks(list);
     }
 
-    private static boolean handleInput(String input) {
-        String bye = "Bye. Hope to see you again soon!";
-        String[] processed = input.split(" ");
-
-        switch (processed[0]) {
-            case "bye":
-                System.out.println(bye);
-                return true;
-            case "list":
-                printListItems();
-                break;
-            case "mark":
-                markDone(processed);
-                break;
-            case "unmark":
-                markNotDone(processed);
-                break;
-            case "delete":
-                delete(processed);
-                break;
-            case "todo":
-                todoHandler(input);
-                break;
-            case "deadline":
-                deadlineHandler(input);
-                break;
-            case "event":
-                eventHandler(input);
-                break;
-            default:
-                System.out.println("Oops, I am not sure what is the task type!");
-        }
-        return false;
-    }
-
-    private static void printListItems() {
+    public static void printListItems() {
         int index = 1;
         for (Task item : list) {
             System.out.println(index + ": " + item);
@@ -70,7 +35,7 @@ public class Sanbot {
         }
     }
 
-    private static void markDone(String[] processed) {
+    public static void markDone(String[] processed) {
         try {
             int num = Integer.parseInt(processed[1].trim()) - 1;
             list.get(num).markAsDone();
@@ -84,7 +49,7 @@ public class Sanbot {
         }
     }
 
-    private static void markNotDone(String[] processed) {
+    public static void markNotDone(String[] processed) {
         try {
             int num = Integer.parseInt(processed[1].trim()) - 1;
             list.get(num).markAsNotDone();
@@ -98,7 +63,7 @@ public class Sanbot {
         }
     }
 
-    private static void delete(String[] processed) {
+    public static void delete(String[] processed) {
         try {
             int num = Integer.parseInt(processed[1].trim()) - 1;
             Task removed = list.get(num);
@@ -115,7 +80,7 @@ public class Sanbot {
         }
     }
 
-    private static void todoHandler(String input) {
+    public static void todoHandler(String input) {
         Task t = new TodoTask(input.substring(5));
         list.add(t);
         count++;
@@ -123,7 +88,7 @@ public class Sanbot {
         System.out.printf("Now you have %d task(s) in the list%n", count);
     }
 
-    private static void deadlineHandler(String input) {
+    public static void deadlineHandler(String input) {
         try {
             String[] details = input.split("/by");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
@@ -142,7 +107,7 @@ public class Sanbot {
 
     }
 
-    private static void eventHandler(String input) {
+    public static void eventHandler(String input) {
         try {
             String[] details2 = input.split("/from");
             String[] details3 = details2[1].split("/to");
