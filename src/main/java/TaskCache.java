@@ -57,7 +57,10 @@ public class TaskCache {
                     }
                     loaded.add(t);
                 } else if (type.equals("E")) {
-                    Task t = new EventTask(processed[2].trim(), processed[3].trim(), processed[4].trim());
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+                    LocalDateTime from = LocalDateTime.parse(processed[3].trim(), formatter);
+                    LocalDateTime to = LocalDateTime.parse(processed[4].trim(), formatter);
+                    Task t = new EventTask(processed[2].trim(), from, to);
                     if (processed[1].trim().equals("1")) {
                         t.markAsDone();
                     }

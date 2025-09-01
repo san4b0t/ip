@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.time.LocalDateTime;
@@ -146,7 +147,10 @@ public class Sanbot {
         try {
             String[] details2 = input.split("/from");
             String[] details3 = details2[1].split("/to");
-            Task et = new EventTask(details2[0].substring(6), details3[0].substring(1), details3[1].substring(1));
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+            LocalDateTime from = LocalDateTime.parse(details3[0].substring(1), formatter);
+            LocalDateTime to = LocalDateTime.parse(details3[1].substring(1), formatter);
+            Task et = new EventTask(details2[0].substring(6), from, to);
             list.add(et);
             count++;
             System.out.println("Got it. I have added this task:\n" + et);
