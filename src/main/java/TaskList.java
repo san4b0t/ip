@@ -43,7 +43,7 @@ public class TaskList {
         } catch (ArrayIndexOutOfBoundsException e) {
             Ui.markNotDoneIndexError();
         } catch (IndexOutOfBoundsException e) {
-            Ui.markDoneInvalidIndex();
+            Ui.markNotDoneInvalidIndex();
         }
     }
 
@@ -53,23 +53,19 @@ public class TaskList {
             Task removed = list.get(num);
             list.remove(num);
             count--;
-            System.out.println("OK, I have removed this task from the list:\n" + removed);
-            System.out.printf("Now you have %d task(s) in the list%n", count);
+            Ui.delete(removed, count);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Oops! It seems like you are trying to delete a task\n"
-                    + "but you missed out the task number\nor maybe forgot to add a space before the number?");
+            Ui.deleteIndexError();
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Oops! It seems like you are trying to delete a task\n" +
-                    "but you have entered an invalid task index");
+            Ui.deleteInvalidIndex();
         }
     }
 
     public static void todoHandler(String input) {
-        Task t = new TodoTask(input.substring(5));
-        list.add(t);
+        Task task = new TodoTask(input.substring(5));
+        list.add(task);
         count++;
-        System.out.println("Got it. I have added this task:\n" + t);
-        System.out.printf("Now you have %d task(s) in the list%n", count);
+        Ui.todo(task, count);
     }
 
     public static void deadlineHandler(String input) {

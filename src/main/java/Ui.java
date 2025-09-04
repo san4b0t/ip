@@ -32,4 +32,24 @@ public class Ui {
         System.out.println("Oops! It seems like you are trying to mark your task as not done\n" +
                 "but you have entered an invalid task index");
     }
+
+    public static void delete(Task removed, int count) {
+        System.out.println("OK, I have removed this task from the list:\n" + removed);
+        System.out.printf("Now you have %d task(s) in the list%n", count);
+    }
+
+    public static void deleteIndexError() {
+        System.out.println("Oops! It seems like you are trying to delete a task\n"
+                + "but you missed out the task number\nor maybe forgot to add a space before the number?");
+    }
+
+    public static void deleteInvalidIndex() {
+        System.out.println("Oops! It seems like you are trying to delete a task\n" +
+                "but you have entered an invalid task index");
+    }
+
+    public static void todo(Task task, int count) {
+        System.out.println("Got it. I have added this task:\n" + task);
+        System.out.printf("Now you have %d task(s) in the list%n", count);
+    }
 }
