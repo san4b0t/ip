@@ -11,13 +11,13 @@ public class Parser {
                 TaskList.printListItems();
                 break;
             case "mark":
-                TaskList.markDone(processed);
+                TaskList.markDone(input);
                 break;
             case "unmark":
-                TaskList.markNotDone(processed);
+                TaskList.markNotDone(input);
                 break;
             case "delete":
-                TaskList.deleteTask(processed);
+                TaskList.deleteTask(input);
                 break;
             case "todo":
                 TaskList.todoHandler(input);
