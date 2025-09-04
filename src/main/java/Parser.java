@@ -17,7 +17,7 @@ public class Parser {
                 TaskList.markNotDone(processed);
                 break;
             case "delete":
-                TaskList.delete(processed);
+                TaskList.deleteTask(processed);
                 break;
             case "todo":
                 TaskList.todoHandler(input);

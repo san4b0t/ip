@@ -16,9 +16,9 @@ public class Storage {
         try {
             writer = new BufferedWriter(new FileWriter(FILEPATH));
             for (Task t : tasks) {
-                writer.write(t.saver());
+                writer.write(t.toSaveString());
                 writer.newLine();
-                System.out.println("saved task: " + t.saver());
+                System.out.println("saved task: " + t.toSaveString());
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -32,7 +32,7 @@ public class Storage {
     }
 
     public static ArrayList<Task> loadTasks() {
-        ArrayList<Task> loaded = new ArrayList<>();
+        ArrayList<Task> loadedTasks = new ArrayList<>();
         BufferedReader reader = null;
 
         try {
@@ -47,7 +47,7 @@ public class Storage {
                     if (processed[1].trim().equals("1")) {
                         t.markAsDone();
                     }
-                    loaded.add(t);
+                    loadedTasks.add(t);
                 } else if (type.equals("D")) {
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
                     LocalDateTime deadline = LocalDateTime.parse(processed[3].trim(), formatter);
@@ -55,7 +55,7 @@ public class Storage {
                     if (processed[1].trim().equals("1")) {
                         t.markAsDone();
                     }
-                    loaded.add(t);
+                    loadedTasks.add(t);
                 } else if (type.equals("E")) {
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
                     LocalDateTime from = LocalDateTime.parse(processed[3].trim(), formatter);
@@ -64,7 +64,7 @@ public class Storage {
                     if (processed[1].trim().equals("1")) {
                         t.markAsDone();
                     }
-                    loaded.add(t);
+                    loadedTasks.add(t);
                 } else {
                     System.out.println("Task could not be read");
                 }
@@ -73,7 +73,7 @@ public class Storage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return loaded;
+        return loadedTasks;
     }
 
 }

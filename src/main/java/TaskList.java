@@ -47,7 +47,7 @@ public class TaskList {
         }
     }
 
-    public static void delete(String[] processed) {
+    public static void deleteTask(String[] processed) {
         try {
             int num = Integer.parseInt(processed[1].trim()) - 1;
             Task removed = list.get(num);
