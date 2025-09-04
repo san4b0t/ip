@@ -9,7 +9,7 @@ public class TodoTask extends Task {
     }
 
     @Override
-    public String saver() {
-        return String.format("T %s", super.saver());
+    public String toSaveString() {
+        return String.format("T %s", super.toSaveString());
     }
 }
