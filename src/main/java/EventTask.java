@@ -1,6 +1,6 @@
 import java.time.LocalDateTime;
 
-public class EventTask extends Task{
+public class EventTask extends Task {
     private LocalDateTime start;
     private LocalDateTime end;
 
@@ -22,11 +22,11 @@ public class EventTask extends Task{
     }
 
     @Override
-    public String saver() {
+    public String toSaveString() {
         String startFormatted = String.format("%02d-%02d-%d %02d:%02d", start.getDayOfMonth(),
                 start.getMonthValue(), start.getYear(), start.getHour(), start.getMinute());
         String endFormatted = String.format("%02d-%02d-%d %02d:%02d", end.getDayOfMonth(),
                 end.getMonthValue(), end.getYear(), end.getHour(), end.getMinute());
-        return String.format("E %s| %s | %s", super.saver(), startFormatted, endFormatted);
+        return String.format("E %s| %s | %s", super.toSaveString(), startFormatted, endFormatted);
     }
 }

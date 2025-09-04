@@ -21,7 +21,7 @@ public class Task {
         return check + this.name;
     }
 
-    public String saver() {
+    public String toSaveString() {
         int check = this.isDone ? 1 : 0;
         return String.format("| %d | %s", check, this.name);
     }

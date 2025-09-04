@@ -47,7 +47,7 @@ public class TaskList {
         }
     }
 
-    public static void delete(String[] processed) {
+    public static void deleteTask(String[] processed) {
         try {
             int num = Integer.parseInt(processed[1].trim()) - 1;
             Task removed = list.get(num);
@@ -85,12 +85,12 @@ public class TaskList {
 
     public static void eventHandler(String input) {
         try {
-            String[] details2 = input.split("/from");
-            String[] details3 = details2[1].split("/to");
+            String[] details = input.split("/from");
+            String[] splitFromAndTo = details[1].split("/to");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-            LocalDateTime from = LocalDateTime.parse(details3[0].substring(1).trim(), formatter);
-            LocalDateTime to = LocalDateTime.parse(details3[1].substring(1).trim(), formatter);
-            Task et = new EventTask(details2[0].substring(6), from, to);
+            LocalDateTime from = LocalDateTime.parse(splitFromAndTo[0].substring(1).trim(), formatter);
+            LocalDateTime to = LocalDateTime.parse(splitFromAndTo[1].substring(1).trim(), formatter);
+            Task et = new EventTask(details[0].substring(6), from, to);
             list.add(et);
             count++;
             Ui.event(et, count);
