@@ -23,9 +23,9 @@ public class EventTask extends Task{
 
     @Override
     public String saver() {
-        String startFormatted = String.format("%02d-%02d-%d %d:%02d", start.getDayOfMonth(),
+        String startFormatted = String.format("%02d-%02d-%d %02d:%02d", start.getDayOfMonth(),
                 start.getMonthValue(), start.getYear(), start.getHour(), start.getMinute());
-        String endFormatted = String.format("%02d-%02d-%d %d:%02d", end.getDayOfMonth(),
+        String endFormatted = String.format("%02d-%02d-%d %02d:%02d", end.getDayOfMonth(),
                 end.getMonthValue(), end.getYear(), end.getHour(), end.getMinute());
         return String.format("E %s| %s | %s", super.saver(), startFormatted, endFormatted);
     }
