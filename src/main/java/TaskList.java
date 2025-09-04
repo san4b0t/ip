@@ -6,8 +6,8 @@ public class TaskList {
     private static ArrayList<Task> list = new ArrayList<>();
     private static int count;
 
-    public static void taskList(ArrayList<Task> list) {
-        list = list;
+    public static void taskList(ArrayList<Task> loadedList) {
+        list = loadedList;
         count = list.size();
     }
 
@@ -76,13 +76,9 @@ public class TaskList {
             Task dt = new DeadlineTask(details[0].substring(9), deadline);
             list.add(dt);
             count++;
-            System.out.println("Got it. I have added this task:\n" + dt);
-            System.out.printf("Now you have %d task(s) in the list%n", count);
+            Ui.deadline(dt, count);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("I see you are trying to add a task with a deadline.\n"
-                    + "it seems you did not use the '/by' flag properly\n"
-                    + "input in the following format:\n"
-                    + "deadline <task> /by <deadline>");
+            Ui.deadlineIndexError();
         }
 
     }
@@ -97,13 +93,9 @@ public class TaskList {
             Task et = new EventTask(details2[0].substring(6), from, to);
             list.add(et);
             count++;
-            System.out.println("Got it. I have added this task:\n" + et);
-            System.out.printf("Now you have %d task(s) in the list%n", count);
+            Ui.event(et, count);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("I see you are trying to add an event.\n"
-                    + "it seems you did not use the '/from' and '/to' flags properly\n"
-                    + "input in the following format:\n"
-                    + "event <task> /from <start> /to <end>");
+            Ui.eventIndexError();
         }
 
     }

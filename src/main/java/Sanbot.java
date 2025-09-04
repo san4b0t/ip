@@ -5,7 +5,6 @@ public class Sanbot {
     public static void main(String[] args) {
 
         Ui.greeting();
-
         TaskList.taskList(Storage.loadTasks());
 
         Scanner scanner = new Scanner(System.in);

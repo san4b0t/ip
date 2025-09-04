@@ -52,4 +52,28 @@ public class Ui {
         System.out.println("Got it. I have added this task:\n" + task);
         System.out.printf("Now you have %d task(s) in the list%n", count);
     }
+
+    public static void deadline(Task task, int count) {
+        System.out.println("Got it. I have added this task:\n" + task);
+        System.out.printf("Now you have %d task(s) in the list%n", count);
+    }
+
+    public static void deadlineIndexError() {
+        System.out.println("I see you are trying to add a task with a deadline.\n"
+                + "it seems you did not use the '/by' flag properly\n"
+                + "input in the following format:\n"
+                + "deadline <task> /by <deadline>");
+    }
+
+    public static void event(Task task, int count) {
+        System.out.println("Got it. I have added this task:\n" + task);
+        System.out.printf("Now you have %d task(s) in the list%n", count);
+    }
+
+    public static void eventIndexError() {
+        System.out.println("I see you are trying to add an event.\n"
+                + "it seems you did not use the '/from' and '/to' flags properly\n"
+                + "input in the following format:\n"
+                + "event <task> /from <start> /to <end>");
+    }
 }
