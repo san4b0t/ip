@@ -27,13 +27,11 @@ public class TaskList {
         try {
             int num = Integer.parseInt(processed[1].trim()) - 1;
             list.get(num).markAsDone();
-            System.out.println("Nice! I have marked this task as done:\n" + list.get(num));
+            Ui.markDone(list.get(num));
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Oops! It seems like you are trying to mark your task done\n" +
-                    "but you missed out the task number\nor maybe forgot to add a space before the number?");
+            Ui.markDoneIndexError();
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Oops! It seems like you are trying to mark your task done\n" +
-                    "but you have entered an invalid task index");
+            Ui.markDoneInvalidIndex();
         }
     }
 
@@ -41,13 +39,11 @@ public class TaskList {
         try {
             int num = Integer.parseInt(processed[1].trim()) - 1;
             list.get(num).markAsNotDone();
-            System.out.println("OK, I've marked this task as not done yet:\n" + list.get(num));
+            Ui.markNotDone(list.get(num));
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Oops! It seems like you are trying to mark your task as not done\n"
-                    + "but you missed out the task number\nor maybe forgot to add a space before the number?");
+            Ui.markNotDoneIndexError();
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Oops! It seems like you are trying to mark your task as not done\n" +
-                    "but you have entered an invalid task index");
+            Ui.markDoneInvalidIndex();
         }
     }
 
