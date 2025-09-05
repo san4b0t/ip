@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class parserTest {
+public class ParserTest {
 
     @Test
     public void handleInput_nonExitCommands() {
