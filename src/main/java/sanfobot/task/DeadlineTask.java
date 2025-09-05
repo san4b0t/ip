@@ -23,6 +23,6 @@ public class DeadlineTask extends Task {
     public String toSaveString() {
         String deadlineFormatted = String.format("%02d-%02d-%d %02d:%02d", deadline.getDayOfMonth(),
                 deadline.getMonthValue(), deadline.getYear(), deadline.getHour(), deadline.getMinute());
-        return String.format("D %s | %s", super.toSaveString(), deadlineFormatted);
+        return String.format("D %s| %s", super.toSaveString(), deadlineFormatted);
     }
 }
