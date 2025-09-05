@@ -1,3 +1,10 @@
+package sanfobot;
+
+import sanfobot.parser.Parser;
+import sanfobot.storage.Storage;
+import sanfobot.tasklist.TaskList;
+import sanfobot.ui.Ui;
+
 import java.util.Scanner;
 
 public class Sanbot {

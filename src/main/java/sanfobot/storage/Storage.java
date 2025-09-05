@@ -1,3 +1,10 @@
+package sanfobot.storage;
+
+import sanfobot.task.DeadlineTask;
+import sanfobot.task.EventTask;
+import sanfobot.task.Task;
+import sanfobot.task.TodoTask;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -66,7 +73,7 @@ public class Storage {
                     }
                     loadedTasks.add(t);
                 } else {
-                    System.out.println("Task could not be read");
+                    System.out.println("sanfobot.task.Task could not be read");
                 }
                 line = reader.readLine();
             }

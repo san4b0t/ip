@@ -1,3 +1,7 @@
+package sanfobot.parser;
+
+import sanfobot.tasklist.TaskList;
+
 public class Parser {
     public static boolean handleInput(String input) {
         String bye = "Bye. Hope to see you again soon!";

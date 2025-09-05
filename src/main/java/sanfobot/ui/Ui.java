@@ -1,7 +1,11 @@
+package sanfobot.ui;
+
+import sanfobot.task.Task;
+
 public class Ui {
 
     public static void greeting() {
-        String greeting = "Hello! I'm Sanbot\nWhat can I do for you?\n";
+        String greeting = "Hello! I'm sanfobot.Sanbot\nWhat can I do for you?\n";
         System.out.println(greeting);
     }
 

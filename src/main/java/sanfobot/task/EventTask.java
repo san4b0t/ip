@@ -1,3 +1,5 @@
+package sanfobot.task;
+
 import java.time.LocalDateTime;
 
 public class EventTask extends Task {
