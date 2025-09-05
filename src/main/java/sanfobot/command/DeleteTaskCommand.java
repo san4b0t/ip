@@ -1,16 +1,22 @@
+package sanfobot.command;
+
+import sanfobot.task.Task;
+import sanfobot.ui.Ui;
+
 import java.util.ArrayList;
 
-public class MarkDoneCommand implements Command{
+public class DeleteTaskCommand {
     public void execute(String input, ArrayList<Task> taskList) {
         String[] processed = input.split(" ");
         try {
             int num = Integer.parseInt(processed[1].trim()) - 1;
-            taskList.get(num).markAsDone();
-            Ui.markDone(taskList.get(num));
+            Task removed = taskList.get(num);
+            taskList.remove(num);
+            Ui.delete(removed, taskList.size());
         } catch (ArrayIndexOutOfBoundsException e) {
-            Ui.markDoneIndexError();
+            Ui.deleteIndexError();
         } catch (IndexOutOfBoundsException e) {
-            Ui.markDoneInvalidIndex();
+            Ui.deleteInvalidIndex();
         }
     }
 }

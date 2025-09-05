@@ -1,3 +1,8 @@
+package sanfobot.tasklist;
+
+import sanfobot.command.*;
+import sanfobot.task.Task;
+
 import java.util.ArrayList;
 
 public class TaskList {
