@@ -147,6 +147,11 @@ public class Ui {
                 + "event <task> /from <start> /to <end>");
     }
 
+    /**
+     * Displays list of tasks found using input keyword
+     *
+     * @param foundTasks
+     */
     public static void printFoundTasks(ArrayList<Task> foundTasks) {
         System.out.println("Here are the matching tasks in your task list:");
         int index = 1;
@@ -154,5 +159,18 @@ public class Ui {
             System.out.printf("%d. %s\n", index, task);
             index++;
         }
+    }
+
+    /**
+     * Display message in case no tasks was found using input keyword.
+     */
+    public static void noTasksFound() {
+        System.out.println("Oops! No tasks were found using the keyword you input.");
+    }
+
+    public static void missingFindTaskInput() {
+        System.out.println("Oops! It seems you were tyring to find tasks but did not enter a keyword.\n"
+            + "Please enter the command in the format: \n"
+            + "find <keyword>");
     }
 }
