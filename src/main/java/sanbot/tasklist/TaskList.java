@@ -100,4 +100,14 @@ public class TaskList {
         AddEventTaskCommand command = new AddEventTaskCommand();
         command.execute(input, taskList);
     }
+
+    /**
+     * Delegates finding tasks to FindTasksCommand
+     *
+     * @param input the user input to find related tasks
+     */
+    public static void findTasks(String input) {
+        FindTasksCommand command = new FindTasksCommand();
+        command.execute(input, taskList);
+    }
 }
