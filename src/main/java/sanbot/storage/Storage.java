@@ -14,10 +14,19 @@ import java.io.FileReader;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Utility class for saving and loading tasks to and from file storage.
+ */
 public class Storage {
 
+    /** File path for storing task data */
     private static final String FILEPATH = "data/taskCache.txt";
 
+    /**
+     * Saves all tasks to the storage file.
+     *
+     * @param tasks the list of tasks to save to file
+     */
     public static void saveTasks(ArrayList<Task> tasks) {
         BufferedWriter writer = null;
         try {
@@ -38,6 +47,12 @@ public class Storage {
         }
     }
 
+    /**
+     * Loads all tasks from the storage file.
+     * Parses saved task data and recreates Task objects.
+     *
+     * @return ArrayList of loaded tasks, empty if file doesn't exist or error occurs
+     */
     public static ArrayList<Task> loadTasks() {
         ArrayList<Task> loadedTasks = new ArrayList<>();
         BufferedReader reader = null;
@@ -73,7 +88,7 @@ public class Storage {
                     }
                     loadedTasks.add(t);
                 } else {
-                    System.out.println("sanfobot.task.Task could not be read");
+                    System.out.println("task could not be read");
                 }
                 line = reader.readLine();
             }
