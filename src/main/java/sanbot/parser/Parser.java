@@ -1,6 +1,6 @@
-package sanfobot.parser;
+package sanbot.parser;
 
-import sanfobot.tasklist.TaskList;
+import sanbot.tasklist.TaskList;
 
 public class Parser {
     public static boolean handleInput(String input) {

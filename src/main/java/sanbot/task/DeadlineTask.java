@@ -1,4 +1,4 @@
-package sanfobot.task;
+package sanbot.task;
 
 import java.time.LocalDateTime;
 

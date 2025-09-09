@@ -1,7 +1,7 @@
-package sanfobot.task;
+package sanbot.task;
 
 import org.junit.jupiter.api.Test;
-import sanfobot.command.AddTodoTaskCommand;
+import sanbot.command.AddTodoTaskCommand;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;

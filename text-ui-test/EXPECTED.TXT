@@ -1,4 +1,4 @@
-Hello! I'm sanfobot.Sanbot
+Hello! I'm sanbot.Sanbot
 What can I do for you?
 
 Got it. I have added this task:

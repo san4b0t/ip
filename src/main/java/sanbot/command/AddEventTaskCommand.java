@@ -1,14 +1,26 @@
-package sanfobot.command;
+package sanbot.command;
 
-import sanfobot.task.EventTask;
-import sanfobot.task.Task;
-import sanfobot.ui.Ui;
+import sanbot.task.EventTask;
+import sanbot.task.Task;
+import sanbot.ui.Ui;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+/**
+ * Command to add event tasks with start and end times to the task list.
+ */
 public class AddEventTaskCommand {
+
+    /**
+     * Parses input and creates an event task.
+     * Format: "event [description] /from [dd-MM-yyyy HH:mm] /to [dd-MM-yyyy HH:mm]"
+     *
+     * @param input the user input string containing task description, start time, and end time
+     * @param taskList the list of tasks to add the new event task to
+     * @throws ArrayIndexOutOfBoundsException if the input format is invalid or missing required parts
+     */
     public void execute(String input, ArrayList<Task> taskList) {
         try {
             String[] details = input.split("/from");

@@ -1,7 +1,7 @@
-package sanfobot.tasklist;
+package sanbot.tasklist;
 
-import sanfobot.command.*;
-import sanfobot.task.Task;
+import sanbot.command.*;
+import sanbot.task.Task;
 
 import java.util.ArrayList;
 
