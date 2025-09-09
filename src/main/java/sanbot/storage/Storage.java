@@ -1,9 +1,9 @@
-package sanfobot.storage;
+package sanbot.storage;
 
-import sanfobot.task.DeadlineTask;
-import sanfobot.task.EventTask;
-import sanfobot.task.Task;
-import sanfobot.task.TodoTask;
+import sanbot.task.DeadlineTask;
+import sanbot.task.EventTask;
+import sanbot.task.Task;
+import sanbot.task.TodoTask;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

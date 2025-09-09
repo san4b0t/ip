@@ -1,9 +1,9 @@
-package sanfobot;
+package sanbot;
 
-import sanfobot.parser.Parser;
-import sanfobot.storage.Storage;
-import sanfobot.tasklist.TaskList;
-import sanfobot.ui.Ui;
+import sanbot.parser.Parser;
+import sanbot.storage.Storage;
+import sanbot.tasklist.TaskList;
+import sanbot.ui.Ui;
 
 import java.util.Scanner;
 
