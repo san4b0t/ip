@@ -151,7 +151,7 @@ public class Ui {
         System.out.println("Here are the matching tasks in your task list:");
         int index = 1;
         for (Task task : foundTasks) {
-            System.out.printf("%d. %s", index, task);
+            System.out.printf("%d. %s\n", index, task);
             index++;
         }
     }

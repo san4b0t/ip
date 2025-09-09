@@ -45,6 +45,7 @@ public class Parser {
                 break;
             case "find":
                 TaskList.findTasks(input);
+                break;
             default:
                 System.out.println("Oops, I am not sure what is the task type!");
         }
