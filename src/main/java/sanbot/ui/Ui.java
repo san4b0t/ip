@@ -2,6 +2,8 @@ package sanbot.ui;
 
 import sanbot.task.Task;
 
+import java.util.ArrayList;
+
 /**
  * Utility class for handling all user interface output messages.
  */
@@ -143,5 +145,14 @@ public class Ui {
                 + "it seems you did not use the '/from' and '/to' flags properly\n"
                 + "input in the following format:\n"
                 + "event <task> /from <start> /to <end>");
+    }
+
+    public static void printFoundTasks(ArrayList<Task> foundTasks) {
+        System.out.println("Here are the matching tasks in your task list:");
+        int index = 1;
+        for (Task task : foundTasks) {
+            System.out.printf("%d. %s", index, task);
+            index++;
+        }
     }
 }
