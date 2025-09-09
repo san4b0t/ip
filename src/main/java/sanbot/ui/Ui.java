@@ -168,6 +168,9 @@ public class Ui {
         System.out.println("Oops! No tasks were found using the keyword you input.");
     }
 
+    /**
+     * Display error message for missing input for find command
+     */
     public static void missingFindTaskInput() {
         System.out.println("Oops! It seems you were tyring to find tasks but did not enter a keyword.\n"
             + "Please enter the command in the format: \n"
