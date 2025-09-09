@@ -1,6 +1,6 @@
-package sanfobot.ui;
+package sanbot.ui;
 
-import sanfobot.task.Task;
+import sanbot.task.Task;
 
 public class Ui {
 

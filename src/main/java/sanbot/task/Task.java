@@ -1,4 +1,4 @@
-package sanfobot.task;
+package sanbot.task;
 
 public class Task {
     private String name;
