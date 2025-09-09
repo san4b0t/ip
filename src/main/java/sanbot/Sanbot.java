@@ -7,8 +7,19 @@ import sanbot.ui.Ui;
 
 import java.util.Scanner;
 
+/**
+ * Main class for the Sanbot chatbot.
+ * Handles startup, user input loop, and exit.
+ */
 public class Sanbot {
 
+    /**
+     * Entry point for the Sanbot application.
+     * Initializes the chatbot, loads saved tasks, processes user input,
+     * and saves tasks before exit.
+     *
+     * @param args command line arguments (not used)
+     */
     public static void main(String[] args) {
 
         Ui.greeting();
