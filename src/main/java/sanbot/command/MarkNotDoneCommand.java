@@ -19,16 +19,16 @@ public class MarkNotDoneCommand {
      * @throws ArrayIndexOutOfBoundsException if the input format is invalid or missing the task number
      * @throws IndexOutOfBoundsException if the specified task index is out of bounds for the task list
      */
-    public void execute(String input, ArrayList<Task> taskList) {
+    public String execute(String input, ArrayList<Task> taskList) {
         String[] processed = input.split(" ");
         try {
             int num = Integer.parseInt(processed[1].trim()) - 1;
             taskList.get(num).markAsNotDone();
-            Ui.markNotDone(taskList.get(num));
+            return Ui.markNotDone(taskList.get(num));
         } catch (ArrayIndexOutOfBoundsException e) {
-            Ui.markNotDoneIndexError();
+            return Ui.markNotDoneIndexError();
         } catch (IndexOutOfBoundsException e) {
-            Ui.markNotDoneInvalidIndex();
+            return Ui.markNotDoneInvalidIndex();
         }
     }
 }

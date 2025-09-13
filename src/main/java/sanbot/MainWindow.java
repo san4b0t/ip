@@ -7,6 +7,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+
+import sanbot.parser.Parser;
+import sanbot.storage.Storage;
+import sanbot.tasklist.TaskList;
+import sanbot.ui.Ui;
 /**
  * Controller for the main GUI.
  */
@@ -26,6 +31,11 @@ public class MainWindow extends AnchorPane {
     @FXML
     public void initialize() {
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
+        dialogContainer.getChildren().add(
+                DialogBox.getDukeDialog(Ui.greeting(), dukeImage)
+        );
+        TaskList.taskList(Storage.loadTasks());
+
     }
 
     /**

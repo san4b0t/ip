@@ -1,5 +1,6 @@
 package sanbot.parser;
 
+import sanbot.storage.Storage;
 import sanbot.tasklist.TaskList;
 
 /**
@@ -14,41 +15,33 @@ public class Parser {
      * @param input the user input string to be parsed and executed
      * @return true if the bye command was entered, false otherwise
      */
-    public static boolean handleInput(String input) {
+    public static String handleInput(String input) {
         String bye = "Bye. Hope to see you again soon!";
         String[] processed = input.split(" ");
 
         switch (processed[0]) {
             case "bye":
-                System.out.println(bye);
-                return true;
+                Storage.saveTasks(TaskList.getAllTasks());
+                return "Your tasks have been saved. See you soon!";
             case "list":
-                TaskList.printListItems();
-                break;
+                return TaskList.printListItems();
             case "mark":
-                TaskList.markDone(input);
-                break;
+                return TaskList.markDone(input);
             case "unmark":
-                TaskList.markNotDone(input);
-                break;
+                return TaskList.markNotDone(input);
             case "delete":
-                TaskList.deleteTask(input);
-                break;
+                return TaskList.deleteTask(input);
             case "todo":
-                TaskList.todoHandler(input);
-                break;
+                return TaskList.todoHandler(input);
             case "deadline":
-                TaskList.deadlineHandler(input);
-                break;
+                return TaskList.deadlineHandler(input);
             case "event":
-                TaskList.eventHandler(input);
-                break;
+                return TaskList.eventHandler(input);
             case "find":
-                TaskList.findTasks(input);
-                break;
+                return TaskList.findTasks(input);
             default:
                 System.out.println("Oops, I am not sure what is the task type!");
+                return "Oops, I am not sure what is the task type!";
         }
-        return false;
     }
 }

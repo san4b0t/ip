@@ -18,9 +18,9 @@ public class AddTodoTaskCommand {
      * @param input the user input string containing the "todo" command and task description
      * @param taskList the list of tasks to add the new todo task to
      */
-    public void execute(String input, ArrayList<Task> taskList) {
+    public String execute(String input, ArrayList<Task> taskList) {
         Task task = new TodoTask(input.substring(5));
         taskList.add(task);
-        Ui.todo(task, taskList.size());
+        return Ui.todo(task, taskList.size());
     }
 }

@@ -21,7 +21,7 @@ public class AddEventTaskCommand {
      * @param taskList the list of tasks to add the new event task to
      * @throws ArrayIndexOutOfBoundsException if the input format is invalid or missing required parts
      */
-    public void execute(String input, ArrayList<Task> taskList) {
+    public String execute(String input, ArrayList<Task> taskList) {
         try {
             String[] details = input.split("/from");
             String[] splitFromAndTo = details[1].split("/to");
@@ -30,9 +30,9 @@ public class AddEventTaskCommand {
             LocalDateTime to = LocalDateTime.parse(splitFromAndTo[1].substring(1).trim(), formatter);
             Task et = new EventTask(details[0].substring(6), from, to);
             taskList.add(et);
-            Ui.event(et, taskList.size());
+            return Ui.event(et, taskList.size());
         } catch (ArrayIndexOutOfBoundsException e) {
-            Ui.eventIndexError();
+            return Ui.eventIndexError();
         }
     }
 }
