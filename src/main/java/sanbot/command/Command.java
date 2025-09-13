@@ -15,5 +15,5 @@ public interface Command {
      * @param input the user input string that triggered this command
      * @param taskList the list of tasks that may be modified by the command execution
      */
-    public void execute(String input, ArrayList<Task> taskList);
+    public String execute(String input, ArrayList<Task> taskList);
 }

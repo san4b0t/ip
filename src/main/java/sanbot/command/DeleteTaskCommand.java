@@ -19,17 +19,17 @@ public class DeleteTaskCommand {
      * @throws ArrayIndexOutOfBoundsException if the input format is invalid or missing the task number
      * @throws IndexOutOfBoundsException if the specified task index is out of bounds for the task list
      */
-    public void execute(String input, ArrayList<Task> taskList) {
+    public String execute(String input, ArrayList<Task> taskList) {
         String[] processed = input.split(" ");
         try {
             int num = Integer.parseInt(processed[1].trim()) - 1;
             Task removed = taskList.get(num);
             taskList.remove(num);
-            Ui.delete(removed, taskList.size());
+            return Ui.delete(removed, taskList.size());
         } catch (ArrayIndexOutOfBoundsException e) {
-            Ui.deleteIndexError();
+            return Ui.deleteIndexError();
         } catch (IndexOutOfBoundsException e) {
-            Ui.deleteInvalidIndex();
+            return Ui.deleteInvalidIndex();
         }
     }
 }

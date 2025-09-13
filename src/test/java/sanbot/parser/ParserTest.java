@@ -1,19 +1,13 @@
 package sanbot.parser;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ParserTest {
 
     @Test
     public void handleInput_nonExitCommands() {
-        assertFalse(Parser.handleInput("Hi"));
+        assertEquals(Parser.handleInput("Hi"), "Oops, I am not sure what is the task type!");
     }
-
-    @Test
-    public void handleInput_ExitCommand() {
-        assertTrue(Parser.handleInput("bye"));
-    }
-
 }

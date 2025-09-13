@@ -21,16 +21,16 @@ public class AddDeadlineTaskCommand {
      * @param taskList the list of tasks to add the new deadline task to
      * @throws ArrayIndexOutOfBoundsException if the input format is invalid or missing required parts
      */
-    public void execute(String input, ArrayList<Task> taskList) {
+    public String execute(String input, ArrayList<Task> taskList) {
         try {
             String[] details = input.split("/by");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
             LocalDateTime deadline = LocalDateTime.parse(details[1].substring(1), formatter);
             Task dt = new DeadlineTask(details[0].substring(9), deadline);
             taskList.add(dt);
-            Ui.deadline(dt, taskList.size());
+            return Ui.deadline(dt, taskList.size());
         } catch (ArrayIndexOutOfBoundsException e) {
-            Ui.deadlineIndexError();
+            return Ui.deadlineIndexError();
         }
     }
 }

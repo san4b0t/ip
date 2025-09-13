@@ -19,7 +19,7 @@ public class FindTasksCommand implements Command {
      * @throws ArrayIndexOutOfBoundsException if the input format is invalid or missing the task number
      * @throws IndexOutOfBoundsException if the specified task index is out of bounds for the task list
      */
-    public void execute(String input, ArrayList<Task> taskList) {
+    public String execute(String input, ArrayList<Task> taskList) {
         ArrayList<Task> foundTasks = new ArrayList<>();
         try {
             String key = input.substring(5).trim();
@@ -32,14 +32,12 @@ public class FindTasksCommand implements Command {
                 }
             }
         } catch (StringIndexOutOfBoundsException e) {
-            Ui.missingFindTaskInput();
-            return;
+            return Ui.missingFindTaskInput();
         }
 
-        if (foundTasks.size() == 0) {
-            Ui.noTasksFound();
-            return;
+        if (foundTasks.isEmpty()) {
+            return Ui.noTasksFound();
         }
-        Ui.printFoundTasks(foundTasks);
+        return Ui.printFoundTasks(foundTasks);
     }
 }
