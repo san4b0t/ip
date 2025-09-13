@@ -214,4 +214,8 @@ public class Ui {
                 + "Please enter the command in the format: \n"
                 + "find <keyword>";
     }
+
+    public static String exitApp() {
+        return "Your tasks have been saved. See you soon!\nSanbot window closing...";
+    }
 }

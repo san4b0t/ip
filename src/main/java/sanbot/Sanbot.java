@@ -5,8 +5,6 @@ import sanbot.storage.Storage;
 import sanbot.tasklist.TaskList;
 import sanbot.ui.Ui;
 
-import java.util.Scanner;
-
 /**
  * Main class for the Sanbot chatbot.
  * Handles startup, user input loop, and exit.
@@ -29,7 +27,8 @@ public class Sanbot {
      * Generates a response for the user's chat message.
      */
     public static String getResponse(String input) {
-        return Parser.handleInput(input);
+        String response = Parser.handleInput(input);
+        return response;
     }
 
 }

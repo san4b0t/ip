@@ -116,4 +116,9 @@ public class TaskList {
         FindTasksCommand command = new FindTasksCommand();
         return command.execute(input, taskList);
     }
+
+    public static String exitApp(String input) {
+        ExitAppCommand command = new ExitAppCommand();
+        return command.execute(input, taskList);
+    }
 }

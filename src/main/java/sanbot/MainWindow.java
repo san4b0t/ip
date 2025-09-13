@@ -8,7 +8,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-import sanbot.parser.Parser;
 import sanbot.storage.Storage;
 import sanbot.tasklist.TaskList;
 import sanbot.ui.Ui;

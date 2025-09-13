@@ -16,13 +16,11 @@ public class Parser {
      * @return true if the bye command was entered, false otherwise
      */
     public static String handleInput(String input) {
-        String bye = "Bye. Hope to see you again soon!";
         String[] processed = input.split(" ");
 
         switch (processed[0]) {
             case "bye":
-                Storage.saveTasks(TaskList.getAllTasks());
-                return "Your tasks have been saved. See you soon!";
+                return TaskList.exitApp(input);
             case "list":
                 return TaskList.printListItems();
             case "mark":

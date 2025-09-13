@@ -35,7 +35,7 @@ public class FindTasksCommand implements Command {
             return Ui.missingFindTaskInput();
         }
 
-        if (foundTasks.size() == 0) {
+        if (foundTasks.isEmpty()) {
             return Ui.noTasksFound();
         }
         return Ui.printFoundTasks(foundTasks);
