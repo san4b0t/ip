@@ -36,4 +36,11 @@ public class Sanbot {
         Storage.saveTasks(TaskList.getAllTasks());
     }
 
+    /**
+     * Generates a response for the user's chat message.
+     */
+    public static String getResponse(String input) {
+        return "Sanbot heard: " + input;
+    }
+
 }
