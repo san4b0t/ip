@@ -16,7 +16,12 @@ public class Parser {
      * @return true if the bye command was entered, false otherwise
      */
     public static String handleInput(String input) {
+        assert input != null : "Input cannot be null!";
+        assert !input.trim().isEmpty() : "Input cannot be just whitespaces!";
+
         String[] processed = input.split(" ");
+
+        assert processed.length > 0 : "split should produce at least 1 element";
 
         switch (processed[0]) {
             case "bye":
