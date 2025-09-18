@@ -3,6 +3,7 @@ package sanbot.tasklist;
 import java.util.ArrayList;
 
 import sanbot.command.*;
+import sanbot.storage.Storage;
 import sanbot.task.Task;
 
 /**

@@ -3,6 +3,7 @@ package sanbot.ui;
 import java.util.ArrayList;
 
 import sanbot.task.Task;
+import sanbot.tasklist.TaskList;
 
 /**
  * Utility class for handling all user interface output messages.

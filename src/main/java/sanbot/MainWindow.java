@@ -8,9 +8,11 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
+import sanbot.reminder.DeadlineTasksReminder;
 import sanbot.storage.Storage;
 import sanbot.tasklist.TaskList;
 import sanbot.ui.Ui;
+
 /**
  * Controller for the main GUI.
  */
@@ -34,7 +36,9 @@ public class MainWindow extends AnchorPane {
                 DialogBox.getDukeDialog(Ui.greeting(), dukeImage)
         );
         TaskList.initializeTaskList(Storage.loadTasks());
-
+        dialogContainer.getChildren().add(
+                DialogBox.getDukeDialog(DeadlineTasksReminder.remindDeadlinesMessage(), dukeImage)
+        );
     }
 
     /**

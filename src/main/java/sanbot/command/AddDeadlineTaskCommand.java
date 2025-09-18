@@ -11,7 +11,7 @@ import sanbot.ui.Ui;
 /**
  * Command to add deadline tasks with due dates to the task list.
  */
-public class AddDeadlineTaskCommand {
+public class AddDeadlineTaskCommand implements Command{
 
     /**
      * Represents a command that takes an input and creates a deadline task.

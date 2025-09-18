@@ -112,4 +112,37 @@ public class Storage {
         return loadedTasks;
     }
 
+    public static ArrayList<Task> getDeadlineTasks() {
+        ArrayList<Task> deadlineTasks = new ArrayList<>();
+        BufferedReader reader = null;
+
+        try {
+            reader = new BufferedReader(new FileReader(FILEPATH));
+            String line = reader.readLine();
+
+            while (line != null) {
+                String[] processed = line.split("\\|");
+                String type = processed[0].trim();
+
+                if (type.equals("D")) {
+
+                    LocalDateTime deadline = LocalDateTime.parse(processed[3].trim(), FORMATTER);
+                    Task t = new DeadlineTask(processed[2].trim(), deadline);
+
+                    if (processed[1].trim().equals("1")) {
+                        continue;
+                    }
+
+                    deadlineTasks.add(t);
+
+                }
+                line = reader.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return deadlineTasks;
+    }
+
 }
