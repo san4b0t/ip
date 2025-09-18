@@ -18,7 +18,7 @@ public class ExitAppCommand implements Command {
     /**
      * The time delay before exiting the app.
      */
-    private static final double EXIT_DELAY_SECONDS = 2;
+    private static final double EXIT_DELAY_SECONDS = 4;
 
     /**
      * Command to exit the app and display exit message to user.
