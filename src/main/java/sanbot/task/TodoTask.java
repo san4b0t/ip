@@ -1,7 +1,7 @@
 package sanbot.task;
 
 /**
- * Simple task with only a description and completion status.
+ * Represents a task with only a description and completion status.
  */
 public class TodoTask extends Task {
 
@@ -16,7 +16,7 @@ public class TodoTask extends Task {
 
     /**
      * Returns formatted string representation for display.
-     * Format: "[T] [X] task description"
+     * Example: "[T] [X] Prepare lunch"
      *
      * @return formatted string with todo task marker
      */
@@ -27,7 +27,7 @@ public class TodoTask extends Task {
 
     /**
      * Returns formatted string for file storage.
-     * Format: "T isDone| task description"
+     * Format: "T | 1 | Prepare lunch"
      *
      * @return formatted string for saving to file
      */
