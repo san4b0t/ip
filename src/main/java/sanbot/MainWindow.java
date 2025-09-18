@@ -33,7 +33,7 @@ public class MainWindow extends AnchorPane {
         dialogContainer.getChildren().add(
                 DialogBox.getDukeDialog(Ui.greeting(), dukeImage)
         );
-        TaskList.taskList(Storage.loadTasks());
+        TaskList.initializeTaskList(Storage.loadTasks());
 
     }
 
