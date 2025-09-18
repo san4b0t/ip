@@ -11,7 +11,7 @@ import sanbot.ui.Ui;
 /**
  * Represents a command to add event tasks with start and end times to the task list.
  */
-public class AddEventTaskCommand {
+public class AddEventTaskCommand implements Command{
 
     /**
      * Parses input and creates an event task.

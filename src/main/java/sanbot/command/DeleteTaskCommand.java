@@ -8,7 +8,7 @@ import sanbot.ui.Ui;
 /**
  * Represents a command to delete tasks from the task list by index.
  */
-public class DeleteTaskCommand {
+public class DeleteTaskCommand implements Command{
 
     /**
      * Remove a task by its position number.

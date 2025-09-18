@@ -9,7 +9,7 @@ import sanbot.ui.Ui;
 /**
  * Represents a command to add simple todo tasks to the task list.
  */
-public class AddTodoTaskCommand {
+public class AddTodoTaskCommand implements Command{
 
     /**
      * Creates a todo task from input description.
