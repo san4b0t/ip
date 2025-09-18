@@ -26,7 +26,7 @@ public class FindTasksCommand implements Command {
             for (Task task : taskList) {
                 String[] split = task.toString().split(" ");
                 for (String word : split) {
-                    if (word.equals(key)) {
+                    if (word.toLowerCase().equals(key)) {
                         foundTasks.add(task);
                     }
                 }
