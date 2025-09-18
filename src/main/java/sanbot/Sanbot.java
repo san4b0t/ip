@@ -27,8 +27,7 @@ public class Sanbot {
      * Generates a response for the user's chat message.
      */
     public static String getResponse(String input) {
-        String response = Parser.handleInput(input);
-        return response;
+        return Parser.handleInput(input);
     }
 
 }

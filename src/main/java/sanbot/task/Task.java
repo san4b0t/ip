@@ -1,11 +1,11 @@
 package sanbot.task;
 
 /**
- * Base class for all task types with name and completion status.
+ * Parent class for all task types with name and completion status.
  */
 public class Task {
     /** The task description */
-    private String name;
+    private final String name;
     /** Whether the task is completed */
     private boolean isDone;
 

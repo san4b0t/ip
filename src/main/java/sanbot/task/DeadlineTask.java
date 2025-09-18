@@ -3,11 +3,11 @@ package sanbot.task;
 import java.time.LocalDateTime;
 
 /**
- * Task with a deadline date and time.
+ * Represents a task with a deadline date and time.
  */
 public class DeadlineTask extends Task {
-    /** The deadline date and time for this task */
-    private LocalDateTime deadline;
+    /** The deadline date and time for this task. */
+    private final LocalDateTime deadline;
 
     /**
      * Creates a deadline task with specified name and deadline.
@@ -22,13 +22,14 @@ public class DeadlineTask extends Task {
 
     /**
      * Returns formatted string representation for display.
-     * Format: "[D] [X] task description (by: dayOfWeek, month day year, hour:minute)"
+     * Example:
+     * "[D] [0] Finish project report (by: Friday, September 19, 2025, 23:59)"
      *
-     * @return formatted string with deadline task marker and deadline for task itself
+     * @return formatted string with deadline task marker and deadline for task itself.
      */
     @Override
     public String toString() {
-        String deadlineFormatted = String.format("%s, %s %d %d, %02d:%02d", deadline.getDayOfWeek(),
+        String deadlineFormatted = String.format("%s, %s %d, %d, %02d:%02d", deadline.getDayOfWeek(),
                 deadline.getMonth(), deadline.getDayOfMonth(), deadline.getYear(),
                 deadline.getHour(), deadline.getMinute());
         return "[D] " + super.toString() + String.format(" (by: %s)", deadlineFormatted);
@@ -36,9 +37,10 @@ public class DeadlineTask extends Task {
 
     /**
      * Returns formatted string for file storage.
-     * Format: "D isDone| task description| dd-MM-yyyy HH:mm"
+     * Example:
+     * "D | 0 | Finish project report | 19-09-2025 23:59"
      *
-     * @return formatted string for saving to file
+     * @return formatted string for saving to file.
      */
     @Override
     public String toSaveString() {

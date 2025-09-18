@@ -1,9 +1,9 @@
 package sanbot.command;
 
+import java.util.ArrayList;
+
 import sanbot.task.Task;
 import sanbot.ui.Ui;
-
-import java.util.ArrayList;
 
 /**
  * Command to find tasks using a keyword.
