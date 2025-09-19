@@ -125,7 +125,7 @@ public class Ui {
         return "I see you are trying to add a task with a deadline.\n"
                 + "it seems you did not use the '/by' flag properly\n"
                 + "input in the following format:\n"
-                + "deadline <task description> /by <DD-MM-YYYY HH:MM>";
+                + "deadline <task description> /by <dd-MM-yyyy HH:mm>";
     }
 
     /**
@@ -145,7 +145,7 @@ public class Ui {
         return "I see you are trying to add an event.\n"
                 + "it seems you did not use the '/from' and '/to' flags properly\n"
                 + "input in the following format:\n"
-                + "event <task description> /from <DD-MM-YYYY HH:MM> /to <DD-MM-YYYY HH:MM>";
+                + "event <task description> /from <dd-MM-yyyy HH:mm> /to <dd-MM-yyyy HH:mm>";
     }
 
     /**
