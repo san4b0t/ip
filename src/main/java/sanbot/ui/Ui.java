@@ -14,7 +14,7 @@ public class Ui {
      * @return the welcome greeting message.
      */
     public static String greeting() {
-        String greeting = "Hello! I'm Sanbot\nWhat can I do for you?\n";
+        String greeting = "Hello! I'm Sanbot\nStart your list today, keep your worries at bay!\n";
         return greeting;
     }
 
@@ -102,6 +102,12 @@ public class Ui {
                 String.format("Now you have %d task(s) in the list%n", count);
     }
 
+    public static String todoError() {
+        return "I see you are trying to add a todo task\n" +
+                "input in the following format:\n" +
+                "todo <task description>";
+    }
+
     /**
      * @param task the deadline task that was added.
      * @param count the total number of tasks in the list.
@@ -119,7 +125,7 @@ public class Ui {
         return "I see you are trying to add a task with a deadline.\n"
                 + "it seems you did not use the '/by' flag properly\n"
                 + "input in the following format:\n"
-                + "deadline <task> /by <deadline>";
+                + "deadline <task description> /by <DD-MM-YYYY HH:MM>";
     }
 
     /**
@@ -139,7 +145,7 @@ public class Ui {
         return "I see you are trying to add an event.\n"
                 + "it seems you did not use the '/from' and '/to' flags properly\n"
                 + "input in the following format:\n"
-                + "event <task> /from <start> /to <end>";
+                + "event <task description> /from <DD-MM-YYYY HH:MM> /to <DD-MM-YYYY HH:MM>";
     }
 
     /**
@@ -178,6 +184,9 @@ public class Ui {
      * @return message to indicate tasks have been saved and about to close chatbot window.
      */
     public static String exitApp() {
-        return "Your tasks have been saved. See you soon!\nSanbot window closing...";
+
+        return "Your tasks have been saved. See you soon!\n" +
+                "Sanbot window closing in\n" +
+                "4...3...2...1...";
     }
 }

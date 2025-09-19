@@ -40,6 +40,9 @@ public class TaskList {
      */
     public static String printListItems() {
         StringBuilder taskListPrint = new StringBuilder();
+        if (taskList.isEmpty()) {
+            return "Your task list is empty.\nAdd away!";
+        }
         int index = 1;
         for (Task item : taskList) {
             taskListPrint.append(index).append(": ").append(item).append("\n");

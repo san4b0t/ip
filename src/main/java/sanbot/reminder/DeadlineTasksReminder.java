@@ -9,17 +9,25 @@ public class DeadlineTasksReminder {
     public static String remindDeadlinesMessage() {
         ArrayList<Task> deadlineTasks = Storage.getDeadlineTasks();
 
-        if (deadlineTasks.isEmpty()) {
-            return "You have no pending deadline tasks, keep it up!";
-        }
-
         StringBuilder reminder = new StringBuilder();
         reminder.append("You have the following deadline tasks due\n");
 
+        int count = 0;
+
         for (Task task : deadlineTasks) {
+            if (task.toSaveString().split("\\|")[1].trim().equals("1")) {
+                continue;
+            }
             reminder.append(task).append("\n");
+            count++;
         }
 
-        return reminder.toString();
+        if (count == 0) {
+            return "You have no deadline tasks due or you have already completed them.\n Keep it up!";
+        }
+
+        String endLine = String.format("You have %d deadline task(s) pending completion.\nGet to work!", count);
+
+        return reminder.append(endLine).toString();
     }
 }

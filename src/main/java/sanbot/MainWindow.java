@@ -27,22 +27,22 @@ public class MainWindow extends AnchorPane {
     private Button sendButton;
 
     private Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
-    private Image dukeImage = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
+    private Image botImage = new Image(this.getClass().getResourceAsStream("/images/DaBot.png"));
 
     @FXML
     public void initialize() {
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
         dialogContainer.getChildren().add(
-                DialogBox.getDukeDialog(Ui.greeting(), dukeImage)
+                DialogBox.getBotDialog(Ui.greeting(), botImage)
         );
         TaskList.initializeTaskList(Storage.loadTasks());
         dialogContainer.getChildren().add(
-                DialogBox.getDukeDialog(DeadlineTasksReminder.remindDeadlinesMessage(), dukeImage)
+                DialogBox.getBotDialog(DeadlineTasksReminder.remindDeadlinesMessage(), botImage)
         );
     }
 
     /**
-     * Creates two dialog boxes, one echoing user input and the other containing Duke's reply and then appends them to
+     * Creates two dialog boxes, one echoing user input and the other containing sanbot's reply and then appends them to
      * the dialog container. Clears the user input after processing.
      */
     @FXML
@@ -51,7 +51,7 @@ public class MainWindow extends AnchorPane {
         String response = Sanbot.getResponse(input);
         dialogContainer.getChildren().addAll(
                 DialogBox.getUserDialog(input, userImage),
-                DialogBox.getDukeDialog(response, dukeImage)
+                DialogBox.getBotDialog(response, botImage)
         );
         userInput.clear();
     }

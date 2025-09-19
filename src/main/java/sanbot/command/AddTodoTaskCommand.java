@@ -20,9 +20,13 @@ public class AddTodoTaskCommand implements Command{
      * @return the message to be displayed to user upon execution of command.
      */
     public String execute(String input, ArrayList<Task> taskList) {
-        Task todoTask = new TodoTask(input.substring(5));
-        taskList.add(todoTask);
+        try {
+            Task todoTask = new TodoTask(input.substring(5));
+            taskList.add(todoTask);
 
-        return Ui.todo(todoTask, taskList.size());
+            return Ui.todo(todoTask, taskList.size());
+        } catch (Exception e) {
+            return Ui.todoError();
+        }
     }
 }
