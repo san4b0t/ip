@@ -37,6 +37,8 @@ public class AddEventTaskCommand implements Command{
             return Ui.event(eventTask, taskList.size());
         } catch (ArrayIndexOutOfBoundsException e) {
             return Ui.eventIndexError();
+        } catch (Exception e) {
+            return Ui.eventError();
         }
     }
 }
