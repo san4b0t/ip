@@ -34,6 +34,8 @@ public class AddDeadlineTaskCommand implements Command{
             return Ui.deadline(deadlineTask, taskList.size());
         } catch (ArrayIndexOutOfBoundsException e) {
             return Ui.deadlineIndexError();
+        } catch (Exception e) {
+            return Ui.deadlineError();
         }
     }
 }

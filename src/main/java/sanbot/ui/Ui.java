@@ -129,6 +129,15 @@ public class Ui {
     }
 
     /**
+     * @return error message for improper attempt to add deadline task.
+     */
+    public static String deadlineError() {
+        return "I see you are trying to add a task with a deadline.\n"
+                + "input in the following format:\n"
+                + "deadline <task description> /by <dd-MM-yyyy HH:mm>";
+    }
+
+    /**
      * @param task the event task that was added.
      * @param count the total number of tasks in the list.
      * @return confirmation message for adding an event task.
@@ -144,6 +153,15 @@ public class Ui {
     public static String eventIndexError() {
         return "I see you are trying to add an event.\n"
                 + "it seems you did not use the '/from' and '/to' flags properly\n"
+                + "input in the following format:\n"
+                + "event <task description> /from <dd-MM-yyyy HH:mm> /to <dd-MM-yyyy HH:mm>";
+    }
+
+    /**
+     * @return error message for improper attempt to add event task.
+     */
+    public static String eventError() {
+        return "I see you are trying to add an event.\n"
                 + "input in the following format:\n"
                 + "event <task description> /from <dd-MM-yyyy HH:mm> /to <dd-MM-yyyy HH:mm>";
     }
